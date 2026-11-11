@@ -7,12 +7,12 @@ def x_o():
             line_o()
         elif i % 2 != 0:
             line_x()
-        check_winner()
         if check_winner() == False:
             break
-        print("it's a drow")
-        
-print(x_o())
+        # print("it's a drow")    
+
+if __name__ == "__main__":
+    x_o()
     
                 
       

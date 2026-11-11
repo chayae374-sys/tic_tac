@@ -1,5 +1,9 @@
 from data import s,winner
 
+
+count = 0
+
+
 def show_table():
     
     print(f"""
@@ -26,15 +30,22 @@ def check_num():
 def line_o():
     print("now it's your turn o")
     user = check_num()
+    global count
+    count += 1
     s[user] = "o"
         
 
 def line_x():
     print("now it's your turn x")
     user = check_num()
+    global count
+    count += 1
     s[user] = "x"   
     
 def check_winner():
+    global count
+    print(f"{count}")
+    
     for item in winner:
         if "x" == s[item[0]] and "x" == s[item[1]] and "x" == s[item[2]]:
             print("x won")
@@ -42,4 +53,8 @@ def check_winner():
         if "o" == s[item[0]] and "o" == s[item[1]] and "o" == s[item[2]]:
             print("o won")       
             return False
+        
+        
+    if count == 8: print("it's a draw")
+    
     return True
